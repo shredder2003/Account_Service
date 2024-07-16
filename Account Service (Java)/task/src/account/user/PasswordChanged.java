@@ -1,4 +1,4 @@
-package account;
+package account.user;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

@@ -1,14 +1,12 @@
-package account.controller;
+package account;
 
-import account.DTOmapper;
-import account.UserRepository;
+import account.user.DTOmapper;
+import account.user.UserRepository;
 import account.payment.PaymentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import static account.AccountServiceApplication.RUN_TYPE;
 
 @RestController
 public class AccountController {
@@ -31,23 +29,6 @@ public class AccountController {
             userRepository.deleteAll();
             paymentRepository.deleteAll();
         }
-    }
-
-
-
-    @PutMapping("/api/admin/user/role")
-    public String putAdminUserRole() {
-        return "Y";
-    }
-
-    @DeleteMapping("/api/admin/user")
-    public String deleteAdminUser() {
-        return "Y";
-    }
-
-    @GetMapping("/api/admin/user")
-    public String getAdminUser() {
-        return "Y";
     }
 
 }

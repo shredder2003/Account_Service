@@ -1,6 +1,6 @@
-package account;
+package account.user;
 
-import account.validation.ValidPassword;
+import account.user.validation.ValidPassword;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

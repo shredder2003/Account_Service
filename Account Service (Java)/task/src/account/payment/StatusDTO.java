@@ -1,4 +1,4 @@
-package account.dto;
+package account.payment;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

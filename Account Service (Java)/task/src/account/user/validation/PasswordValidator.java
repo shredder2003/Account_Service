@@ -1,7 +1,7 @@
-package account.validation;
+package account.user.validation;
 
-import account.exception.BreachedPasswordException;
-import account.exception.PasswordLengthException;
+import account.user.exception.BreachedPasswordException;
+import account.user.exception.PasswordLengthException;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.http.HttpStatus;

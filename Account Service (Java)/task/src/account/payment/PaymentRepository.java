@@ -1,6 +1,5 @@
 package account.payment;
 
-import account.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.time.YearMonth;

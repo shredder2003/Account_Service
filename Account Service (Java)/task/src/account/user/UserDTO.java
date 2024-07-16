@@ -1,4 +1,4 @@
-package account.dto;
+package account.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,4 +12,5 @@ public class UserDTO{
     String name;
     String lastname;
     String email;
+    String[] roles;
 }

@@ -1,4 +1,4 @@
-package account;
+package account.payment;
 
 
 import jakarta.persistence.AttributeConverter;
