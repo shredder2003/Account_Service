@@ -16,7 +16,7 @@ import java.util.Locale;
 @Entity
 //@Table(name="payment")
 @Table(
-        name="payment",
+        name="PAYMENTS",
         uniqueConstraints=
         @UniqueConstraint(columnNames={"employee", "period"})
 )

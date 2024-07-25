@@ -1,6 +1,6 @@
 package account.user;
 
-import account.admin.Group;
+import account.admin.Role;
 import account.user.validation.ValidPassword;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -10,14 +10,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name="user")
+@Table(name="USERS")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -40,16 +37,16 @@ public class User {
     private String password;
 
     @ManyToMany(cascade = {
-                CascadeType.PERSIST,
+                //CascadeType.PERSIST,
                 CascadeType.MERGE
                 }
                 ,fetch = FetchType.EAGER
     )
-    @JoinTable(name = "user_groups",
+    @JoinTable(name = "USER_ROLES",
             joinColumns =@JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "group_id"
+            inverseJoinColumns = @JoinColumn(name = "role_id"
             ))
-    private Set<Group> userGroups = new HashSet<>();
+    private Set<Role> userRoles = new HashSet<>();
 
     public User(String name, String lastname, String email, String password) {
         this.name = name;

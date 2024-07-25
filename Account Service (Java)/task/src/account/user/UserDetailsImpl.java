@@ -1,23 +1,26 @@
 package account.user;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
 @Getter
+@RequiredArgsConstructor
 public class UserDetailsImpl implements UserDetails {
     private final User user;
+    private final UserRepository userRepository;
 
-    public UserDetailsImpl(User user) {
-        this.user = user;
-    }
-
+    @Transactional
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getUserGroups().stream().map(n-> new SimpleGrantedAuthority(n.getRoleName())).toList();
+        User reReadUser = userRepository.findUserByUsernameIgnoreCase(user.getUsername()).get();
+        return reReadUser.getUserRoles().stream().map(n-> new SimpleGrantedAuthority(n.getFullName())).toList();
+        //return user.getUserGroups().stream().map(n-> new SimpleGrantedAuthority(n.getRoleName())).toList();
     }
 
     @Override

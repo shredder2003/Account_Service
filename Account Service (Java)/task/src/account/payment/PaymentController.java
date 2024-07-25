@@ -26,7 +26,7 @@ public class PaymentController {
     }
 
     @PostMapping("/api/acct/payments")
-    public StatusDTO postAcctPayments(@RequestBody @UniqueElements List<@Valid Payment> paymentList) {
+    public StatusDTO postAcctPayments(@RequestBody(required = false) @UniqueElements List<@Valid Payment> paymentList) {
         return paymentService.addPayments(paymentList);
     }
 

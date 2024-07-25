@@ -64,10 +64,6 @@ public class ResponseEntityExceptionHandlerImpl extends ResponseEntityExceptionH
     @Override
     protected ResponseEntity<Object> handleErrorResponseException(
             ErrorResponseException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        /*Logger logger = LoggerFactory.getLogger(this.getClass());
-        logger.error("getDetailMessageCode="+ex.getDetailMessageCode()
-                +" getBody="+ex.getBody().getDetail()
-        );*/
         account.exception.ErrorResponse errorResponse = new account.exception.ErrorResponse.ErrorResponseBuilder()
                 .status(HttpStatus.BAD_REQUEST.value())
                 .error(HttpStatus.BAD_REQUEST.getReasonPhrase())

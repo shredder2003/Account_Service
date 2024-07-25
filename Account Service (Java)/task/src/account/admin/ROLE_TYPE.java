@@ -1,6 +1,6 @@
 package account.admin;
 
-public enum GROUP_TYPE {
-    ADMIN
+public enum ROLE_TYPE {
+     ADMIN
     ,BUSINESS
 }

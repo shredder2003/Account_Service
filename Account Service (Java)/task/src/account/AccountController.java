@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AccountController {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private final DTOmapper dTOmapper;
     private final UserRepository userRepository;
